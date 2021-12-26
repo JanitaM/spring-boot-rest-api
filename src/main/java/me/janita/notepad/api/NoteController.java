@@ -45,4 +45,5 @@ public class NoteController {
     public void updateNote(@PathVariable("id") UUID id, @Valid @NonNull @RequestBody Note updatedNote) {
         noteService.updateNote(id, updatedNote);
     }
+
 }
