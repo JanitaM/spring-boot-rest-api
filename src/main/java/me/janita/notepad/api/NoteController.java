@@ -9,8 +9,8 @@ import javax.validation.Valid;
 import java.util.List;
 import java.util.UUID;
 
-@RequestMapping("notes")
 @RestController
+@RequestMapping("notes")
 public class NoteController {
     private final NoteService noteService;
 
@@ -25,7 +25,9 @@ public class NoteController {
     }
 
     @GetMapping
-    public List<Note> getAllNotes() {
+    public List<Note> getAllNotes(@RequestParam(value="page", defaultValue = "1") int page,
+                                  @RequestParam(value="limit", defaultValue = "10") int limit,
+                                  @RequestParam(value="sort", defaultValue = "desc", required = false) String sort) {
         return noteService.getAllNotes();
     }
 

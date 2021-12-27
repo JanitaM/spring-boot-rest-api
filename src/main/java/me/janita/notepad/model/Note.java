@@ -9,6 +9,7 @@ public class Note {
 
     @NotBlank // not " "
     private final String name;
+
     private final String description;
 
     public Note(@JsonProperty("id") UUID id,

@@ -13,9 +13,9 @@ public class FakeNoteDataAccessService implements NoteDao {
     private static List<Note> DB = new ArrayList<>();
 
     @Override
-    public int insertNote(UUID id, Note note) { // Bool to get true/false?
+    public int insertNote(UUID id, Note note) {
         DB.add(new Note(id, note.getName(), note.getDescription()));
-        return 1; // Bool to get true/false?
+        return 1;
     }
 
     @Override
